@@ -1,17 +1,28 @@
-{% extends 'base.html'%}
+{% extends 'base.html' %}
 
 {% block header %}
-<div class="alert alert-dark" role="alert">
-    detail
+<div class="mb-2 p-5 bg-light text-black rounded">
+    <div class="container">
+        <h1 class="display-4">TodoList</h1>
+    </div>
 </div>
 {% endblock header %}
 
 {% block content %}
-<div class="alert alert-success" role="alert">
-    {{ object.title }}
-</div>
-
-<div class="alert alert-success" role="alert">
-    {{ object.memo }}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="bg-light p-4 rounded shadow-sm">
+                title
+                <div class="alert alert-success" role="alert">
+                    {{ object.title }}
+                </div>
+                memo
+                <div class="alert alert-success" role="alert">
+                    {{ object.memo }}
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 {% endblock content %}

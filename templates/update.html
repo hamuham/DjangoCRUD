@@ -1,13 +1,41 @@
 {% extends 'base.html' %}
 
-{% block content %}
-<form action='' method='POST'>
-    {% csrf_token %}
-    {{ form.title }}
-    {{ form.memo }}
-    {{ form.priority }}
-    {{ form.duedate }}
-    <input type='submit' value='update'>
-</form>
+{% block header %}
+<div class="mb-2 p-5 bg-light text-black rounded">
+    <div class="container">
+        <h1 class="display-4">TodoList</h1>
+    </div>
+</div>
+{% endblock header %}
 
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="bg-light p-4 rounded shadow-sm">
+                <h2 class="mb-4">Update Todo</h2>
+                <form action="" method="POST">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <label for="title" class="form-label">Title</label>
+                        {{ form.title }}
+                    </div>
+                    <div class="mb-3">
+                        <label for="memo" class="form-label">Memo</label>
+                        {{ form.memo }}
+                    </div>
+                    <div class="mb-3">
+                        <label for="priority" class="form-label">Priority</label>
+                        {{ form.priority }}
+                    </div>
+                    <div class="mb-3">
+                        <label for="duedate" class="form-label">Due Date</label>
+                        {{ form.duedate }}
+                    </div>
+                    <button type="submit" class="btn btn-primary">Update</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock content %}

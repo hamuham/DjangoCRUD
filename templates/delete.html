@@ -1,9 +1,29 @@
 {% extends 'base.html' %}
 
-{% block content %}
-<form action='' method='POST'>
-    {% csrf_token %}
-    <input type='submit' value='delete'>
-</form>
+{% block header %}
+<div class="mb-2 p-5 bg-light text-black rounded">
+    <div class="container">
+        <h1 class="display-4">TodoList</h1>
+    </div>
+</div>
+{% endblock header %}
 
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="bg-light p-4 rounded shadow-sm">
+                <div class="mt-4">
+                    <form action="" method="POST">
+                        {% csrf_token %}
+                        <h2>Todoを削除</h2>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-danger">Delete</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock content %}
